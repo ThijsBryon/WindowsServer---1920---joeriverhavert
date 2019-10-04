@@ -1,2 +1,5 @@
-# WindowsServer---1920---joeriverhavert
-Dit is de repository van het 3de jaars vak 'Windows Server'. 
+# WindowsServer (TI)
+## Joeri Verhavert
+#### Beschrijving
+Dit is de github repo van joeri verhavert. In deze repo zal je de content terug project over windows server.
+
