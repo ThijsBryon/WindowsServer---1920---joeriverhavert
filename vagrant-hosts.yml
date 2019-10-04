@@ -57,6 +57,8 @@
   
 #Windows 10 Client
 - name: WIN-CLT1
+  box: gusztavvargadr/windows-10
+  intnet: true
   
   
 
