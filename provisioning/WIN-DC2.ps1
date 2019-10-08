@@ -14,21 +14,24 @@ Set-WinUserLanguageList -LanguageList NL-BE -Force;
 Write-host("De tijdzone wordt ingesteld op Brussel(Roman Standard Time)");
 Set-TimeZone "Romance Standard Time";
 
-#aanpassen van ethernet adapter
-Write-host("Netwerkadapter Ethernet heeft nieuwe naamgeving,LAN.");
-Rename-NetAdapter -Name "Ethernet 2" -NewName "LAN";
-Write-host("Ip,subnet,default gateway, DNS van LAN adapter wordt aangepast. ")
-New-NetIPAddress –IPAddress 192.168.100.20 -DefaultGateway 192.168.100.10 -PrefixLength 24 -InterfaceIndex (Get-NetAdapter).InterfaceIndex;
-Set-DNSClientServerAddress -–ServerAddresses 192.168.100.10;
-
 #install AD DS.
 Write-host("AD DS feature wordt gëinstalleerd.");
 Install-WindowsFeature AD-Domain-Services -IncludeManagementTools;
 
-#Server wordt gepromoveerd naar domaincontroller in een bestaande forest.
-Install-ADDSDomainController  -DomainName 'joeri.periode1' -SiteName 'joeri.periode1' -NoRebootOnCompletion -Force
+#promoveren naar domain controller in joeri.periode1
+Write-host("Server wordt gepromoveerd in het domein joeri.periode1 als 2de domeincontroller.");
+$username = "JOERI\admin.joeri"
+$password = "Verhavert1"
+$secstr = New-Object -TypeName System.Security.SecureString
+$password.ToCharArray() | ForEach-Object {$secstr.AppendChar($_)}
+$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $username, $secstr
+Install-addsdomaincontroller -installdns -domainname "joeri.periode1" -Credential $cred -SafeModeAdministratorPassword (ConvertTo-SecureString -AsPlainText "Joeri1311" -Force) -Force
 
-
-#Systeem herstarten
-Write-host("Het systeem zal herstart worden.")
-Restart-Computer -Force
+#aanpassen van ethernet adapters settings
+Write-host("Netwerkadapter Ethernet heeft nieuwe naamgeving,LAN.");
+Rename-NetAdapter -Name "Ethernet 2" -NewName "LAN";
+Write-host("Ip,subnet,default gateway, DNS van LAN adapter wordt aangepast. ")
+New-NetIPAddress -InterfaceAlias LAN -AddressFamily IPv4 -IPAddress 192.168.100.20 -PrefixLength 24 -DefaultGateway 192.168.100.10
+Set-DnsClientServerAddress -InterfaceAlias LAN -ServerAddresses 192.168.100.10
+Write-host("Nat interface wordt gedisabled.")
+Disable-NetAdapter -Name "Ethernet" -Confirm:$false;

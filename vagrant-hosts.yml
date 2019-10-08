@@ -33,14 +33,10 @@
 #Domaincontroller 1
 - name: WIN-DC1
   intnet: true
-  ip: 192.168.100.10
-  netmask: 255.255.255.0
  
 #Domaincontroller 2
 - name: WIN-DC2
   intnet: true
-  ip: 192.168.100.20
-  netmask: 255.255.255.0
   auto_config: false;
 
 #SQL server
