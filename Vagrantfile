@@ -82,7 +82,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       # Run configuration script for the VM
       node.vm.provision 'shell', path: 'provisioning/' + host['name'] + '.ps1'
+	  if(host['name'] == 'WIN-DC1')
+	  	node.vm.provision "shell", reboot: true
+		node.vm.provision 'shell', path: 'provisioning/AddUsers/AddUsersDC1.ps1'
+	  end
     end
+	
   end
 end
 

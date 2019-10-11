@@ -40,21 +40,21 @@
   auto_config: false;
 
 #SQL server
-- name: WIN-SQL-SCCM
-  intnet: true
-  ip: 192.168.100.30
-  netmask: 255.255.255.0
+#- name: WIN-SQL-SCCM
+#  intnet: true
+#  ip: 192.168.100.30
+# netmask: 255.255.255.0
   
 #Deployment server
-- name: WIN-EXC-SHP
-  intnet: true
-  ip: 192.168.100.40
-  netmask: 255.255.255.0
+#- name: WIN-EXC-SHP
+#  intnet: true
+#  ip: 192.168.100.40
+#  netmask: 255.255.255.0
   
 #Windows 10 Client
-- name: WIN-CLT1
-  box: gusztavvargadr/windows-10
-  intnet: true
+#- name: WIN-CLT1
+#  box: gusztavvargadr/windows-10
+#  intnet: true
   
   
 
