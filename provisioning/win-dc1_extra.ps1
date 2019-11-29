@@ -38,7 +38,7 @@ Rename-NetAdapter -Name "Ethernet 2" -NewName "LAN";
 
 #Ip address toewijzen
 Write-host("Ip address wordt toegewezen.")
-New-NetIPAddress -InterfaceAlias LAN -AddressFamily IPv4 -IPAddress 192.168.100.10 -PrefixLength 24
+New-NetIPAddress -InterfaceAlias LAN -AddressFamily IPv4 -IPAddress 192.168.100.10 -PrefixLength 24  -DefaultGateway 192.168.100.10
 
 write-host "DHCP wordt geinstalleerd"
 Install-WindowsFeature DHCP -IncludeManagementTools
@@ -76,5 +76,6 @@ netsh routing ip nat add interface "LAN"
 
 #Hostname veranderen
 Rename-Computer -NewName "WIN-DC1"
+Start-Sleep -s 30
 
 Restart-Computer

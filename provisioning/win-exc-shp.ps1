@@ -19,3 +19,16 @@ Write-host("Dns adres wordt ingesteld")
 Set-DnsClientServerAddress -InterfaceAlias LAN -ServerAddresses 192.168.100.10
 #Write-host("Nat interface wordt gedisabled.")
 Disable-NetAdapter -Name "Ethernet" -Confirm:$false;
+
+#server toevoegen aan domain
+Write-Host("Server wordt gevoegd aan het joeri.periode1 domain.")
+Add-Computer -DomainName "joeri.periode1" -Credential (Get-Credential JOERI\Administrator)
+
+Write-Host("Server wordt hernoemd naar WIN-EXC-SHP")
+Rename-Computer -NewName "WIN-EXC-SHP"
+
+Start-Sleep -s 30
+
+#Restarting
+Write-Host("Server wordt herstart.")
+Restart-computer

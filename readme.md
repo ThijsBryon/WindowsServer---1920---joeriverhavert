@@ -32,6 +32,7 @@ U krijgt dus volgende situatie  dewelke u zoveel mogelijk zal automatiseren via 
       1. IP: 192.168.100.30
       2. SN: 255.255.255.0
       3. DG: 192.168.100.10
+
 3. **Exchange server**
   1. OS: Windows 2019
   2. Naam SQL Server WIN-EXC-SHP
@@ -51,6 +52,7 @@ U krijgt dus volgende situatie  dewelke u zoveel mogelijk zal automatiseren via 
       1. IP: 192.168.100.30
       2. SN: 255.255.255.0
       3. DG: 192.168.100.30
+
 2. **SharePoint server**
   1. OS Windows 2019
   2. Naam SQL Server WIN-EXC-SHP
@@ -60,6 +62,7 @@ U krijgt dus volgende situatie  dewelke u zoveel mogelijk zal automatiseren via 
       1. IP: 192.168.100.40
       2. SN: 255.255.255.0
       3. DG: 192.168.100.40
+      
 3. **Windows Cliënt**
   1. OS: Windows 10
   2. Na&amp;am client WIN-CLT1
