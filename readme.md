@@ -34,7 +34,7 @@ U krijgt dus volgende situatie  dewelke u zoveel mogelijk zal automatiseren via 
       3. DG: 192.168.100.10
 
 3. **Exchange server**
-  1. OS: Windows 2019
+  1. OS: Windows 2016
   2. Naam SQL Server WIN-EXC-SHP
   3. Versie Exchange: 2016
   4. IP instellingen Exchange
@@ -43,32 +43,31 @@ U krijgt dus volgende situatie  dewelke u zoveel mogelijk zal automatiseren via 
       2. SN: 255.255.255.0
       3. DG: 192.168.100.40
 
-1. **Deployment server**
+4. **Deployment server**
   1. OS: Windows 2019
-  2. Naam WIN-SQL-SCCM
+  2. Naam  WIN-SQL-SCCM
   3. Versie SCCM: 2016
   4. IP instellingen Deployment
-    1. 1 NIC op intern netwerk
-      1. IP: 192.168.100.30
-      2. SN: 255.255.255.0
-      3. DG: 192.168.100.30
-
-2. **SharePoint server**
+      5. 1 NIC op intern netwerk
+          1. IP: 192.168.100.30
+          2. SN: 255.255.255.0
+          3. DG: 192.168.100.30
+5. **SharePoint server**
   1. OS Windows 2019
-  2. Naam SQL Server WIN-EXC-SHP
+  2. Naam SQL Server  WIN-EXC-SHP
   3. Versie SharePoint: 2016
   4. IP instellingen Exchange
-    1. 1 NIC op intern netwerk
-      1. IP: 192.168.100.40
-      2. SN: 255.255.255.0
-      3. DG: 192.168.100.40
-      
-3. **Windows Cliënt**
+      5. 1 NIC op intern netwerk
+          1. IP: 192.168.100.40
+          2. SN: 255.255.255.0
+          3. DG: 192.168.100.40
+
+6. **Windows Cliënt**
   1. OS: Windows 10
-  2. Na&amp;am client WIN-CLT1
+  2. Na&am client  WIN-CLT1
   3. IP: via DHCP van de DC1 of DC2
   4. Office software om te mailen
-
+  
 1. **Bijkomende specificaties**
   1. Domeinnaam voor deze opstelling uw naam.periode1
     1. Voorbeeld **thijs.periode1**

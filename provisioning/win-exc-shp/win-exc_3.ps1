@@ -4,8 +4,8 @@ Import-Module PackageManagement;
 
 Set-Location -Path "C:\SoftwarePackages\"
 
-#Invoke-WebRequest "https://download.microsoft.com/download/f/4/e/f4e4b3a0-925b-4eff-8cc7-8b5932d75b49/ExchangeServer2016-x64-cu14.iso" -OutFile ExhangeIsoFile.iso
-#Dism /Online /Enable-Feature /All /FeatureName:Server-Gui-Mgmt /Source:C:\TempTest
+Invoke-WebRequest "https://download.microsoft.com/download/f/4/e/f4e4b3a0-925b-4eff-8cc7-8b5932d75b49/ExchangeServer2016-x64-cu14.iso" -OutFile ExhangeIsoFile.iso
+Dism /Online /Enable-Feature /All /FeatureName:Server-Gui-Mgmt /Source:C:\TempTest
 
 Mount-DiskImage -ImagePath "C:\SoftwarePackages\ExhangeIsoFile.iso"
 
